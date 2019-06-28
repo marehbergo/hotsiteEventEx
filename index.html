@@ -1,0 +1,2047 @@
+    <!DOCTYPE HTML>
+    <html>
+        <head>
+            <title>Teste</title>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+            <link rel="stylesheet" href="assets/css/main.css" />
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        </head>
+
+        <body>
+            <!-- Modal - Initial -->
+            <div class="modal fade login" id="modalInit">
+                <div class="modal-dialog modal-md login animated">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <p class="modal-title" style="margin-bottom: 10px;">Texto personalizado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Modal Login -->
+            <!--<div class="modal fade login" id="modalLogin">
+                <div class="modal-dialog modal-md login animated">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Você já tem cadastrado conosco!</h4>
+                        </div>
+                        <div class="modal-body">  
+                            <p class="modal-title-body align-center" style="margin-bottom: 10px;">Entrar com</p>
+                            <div class="box">
+                                <div class="content">
+                                    <div class="social">
+                                        <a id="google_login" class="circle google" href="/auth/google_oauth2">
+                                            <i class="fa fa-google-plus fa-fw"></i>
+                                        </a>
+                                        <a id="facebook_login" class="circle facebook" href="/auth/facebook">
+                                            <i class="fa fa-facebook fa-fw"></i>
+                                        </a>
+                                    </div>
+                                    <div class="division">
+                                        <div class="line l"></div>
+                                            <span>ou</span>
+                                        <div class="line r"></div>
+                                    </div>
+                                    <div class="error"></div>
+                                    <div class="form loginBox form-info">
+                                        <form method="post" action="/login" accept-charset="UTF-8" style="width: 85%; margin: 0 auto;">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">E-mail</label>
+                                                <input id="email" name="email" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Senha</label>
+                                                <input id="password" name="password" type="text" class="form-control">
+                                            </div>
+                                            <input class="btn btn-default btn-login" type="button" value="Login" onclick="loginAjax()">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box">
+                                <div class="content registerBox" style="display:none;">
+                                    <div class="form form-info">
+                                        <form method="post" html="{:multipart=>true}" data-remote="true" action="/register" accept-charset="UTF-8" style="width: 85%; margin: 0 auto;">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">E-mail</label>
+                                                <input id="email" name="email" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Senha</label>
+                                                <input id="password" name="password" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Confirme a senha</label>
+                                                <input id="email" name="email" type="text" class="form-control">
+                                            </div>
+                                            <input class="btn btn-default btn-register" type="submit" value="Criar conta" name="commit">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="forgot login-footer">
+                                <span>Ainda não é cadastrado? 
+                                    <a href="javascript: showRegisterForm();">Criar conta</a></span>
+                            </div>
+                            <div class="forgot register-footer" style="display:none">
+                                <span>Já possui cadastro?</span>
+                                <a href="javascript: showLoginForm();">Fazer login</a>
+                            </div>
+                        </div>        
+                    </div>
+                </div>
+            </div>-->
+
+            <!-- Register Button -->
+            <div id="register" class="register">
+                <div class="row content align-center">
+                    <div class="col-md-4 col-lg-4 col-xs-12"></div>
+                    <div class="col-md-4 col-lg-4 col-xs-12 align-center">
+                        <a href="#schedule" id="toRegister" class="btn default" role="button" style="height: 40px; text-align: center; vertical-align: middle; font-size: 18px;">Inscreva-se</a>
+                    </div>
+                    <div class="col-md-4 col-lg-4 col-xs-12"></div>
+                </div>
+            </div>
+        
+            <div class="main">
+                           
+            <!-- Main -->
+                <ul class="flags icons pull-right">
+                    <li><a href="#" class="icon" title="Portuguese"><img src="images/brazil.png" alt="Bandeira do Brasil"></a></li><br/>
+                    <li><a href="#" class="icon" title="Spanish"><img src="images/spain.png" alt="Bandeira da Espanha"></a></li><br/>
+                    <li><a href="#" class="icon" title="English"><img src="images/usa.png" alt="Bandeira dos Estados Unidos"></a></li><br/>
+                </ul>
+                
+                <section id="main">
+                    <div class="inner">
+
+                    <!-- One -->
+                        <section id="one" class="wrapper">
+                            <div class="image fit flush">
+                                <img src="https://www.hbatools.com.br/Content/fotos/Evento/Banner/52pt.png" alt="banner do evento" style="max-height: 280px;"/>
+                            </div>
+
+                            <!-- banner alternativo
+                            <div class="banner">
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-4 col-xs-12">
+                                        <div class="logo-banner">
+                                            <img src="https://www.hbatools.com.br/Content/fotos/Evento/Banner/52pt.png" alt="banner do evento" style="max-height: 280px; max-width: 420px;"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 col-lg-8 col-xs-12">
+                                        <h2>XXI CONGRESSO DAS ASSOCIAÇÕES COMERCIAIS E EMPRESARIAIS DE MINAS GERAIS</h2>                                       
+                                    </div>
+                                </div>
+                            </div>-->
+    
+                            <header class="special">
+                                <h2>SIC 2018 - Semana Internacional do Café</h2>
+
+                                <!-- Informações do Evento -->
+                                <div class="row">
+                                    <!-- Data -->
+                                    <div id="event-date" class="col-md-4 col-xs-12 align-left">
+                                        <div class="col-md-1 col-xs-1 align-center">
+                                            <i class="material-icons icon">event</i>
+                                        </div>
+                                        <div class="col-md-10 col-xs-10">
+                                            <p class="title"><b>Data</b></p>
+                                            <p class="title text">07/11/2018 a 09/11/2018</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Lugar -->
+                                    <div id="event-place" class="col-md-5 col-xs-12 align-left">
+                                        <div class="col-md-1 col-xs-1 align-center">
+                                            <i class="material-icons icon">place</i>
+                                        </div>
+                                        <div class="col-md-10 col-xs-10">
+                                            <p class="title"><b>Localização</b></p>
+                                            <p class="title text">Expominas BH</p>
+                                            <p class="title subtext" style="line-height:12px;">Av. Amazonas, 6200 - Gameleira, Belo Horizonte - MG, 30510-000</p>
+                                            <a style="font-size: 12px; margin-top: 2px; display: flex;" data-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap">
+                                                <i class="icon size fa fa-angle-down"></i>  Ver mapa</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Compartilhar -->
+                                    <div class="col-md-3 col-xs-12 align-right">
+                                        <div class="share">
+                                            <p> <i class="material-icons icon" style="margin-right: 10px;">share</i> Compartilhar</p>
+                                            <ul class="icons" style="margin: 10px 10px 0 0;">
+                                                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                                                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                                                <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                                                <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Como chegar -->
+                                <div class="collapse" id="collapseMap">
+                                    <br> <p>Como chegar: <br>
+                                    <ul class="icons" style="margin-bottom: 0px;">
+                                        <li><a href="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDEpPHodaLsTQVE95mYyalve793R_gAl-Q&origin=Current+Location&destination=-19.931203,-43.991615&mode=driving" target="_blank" class="btn btn--target js-drive-directions-link" title="Ver direções de carro no Google Maps">
+                                            <img class="icons png" src="images/car.png"></a></li>
+                                        <li><a href="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDEpPHodaLsTQVE95mYyalve793R_gAl-Q&origin=Current+Location&destination=-19.931203,-43.991615&mode=transit" target="_blank" class="btn btn--target js-transit-directions-link" title="Ver direções por transporte público no Google Maps">
+                                            <img class="icons png" src="images/bus.png"></a></li>
+                                        <li><a href="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDEpPHodaLsTQVE95mYyalve793R_gAl-Q&origin=Current+Location&destination=-19.931203,-43.991615&mode=walking" target="_blank" class="btn btn--target js-walk-directions-link" title="Ver direções de trajeto a pé no Google Maps">
+                                            <img class="icons png" src="images/walk.png"></a></li>
+                                        <li><a href="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDEpPHodaLsTQVE95mYyalve793R_gAl-Q&origin=Current+Location&destination=-19.931203,-43.991615&mode=bicycling" target="_blank" class="btn btn--target js-bike-directions-link" title="Ver direções de bicicleta no Google Maps">
+                                            <img class="icons png" src="images/bicycle.png"></a></li>
+                                    </ul>
+                                    <div id="map-container" class="z-depth-1" style="height: 500px"></div>
+                                </div>
+                            </header>
+                        </section>
+                    
+                    <!-- Two -->
+                        <section id="description" >
+                            <div class="description">
+                                <p class="description">Informações do evento</p><br>
+
+                                <p class="description"><i class="material-icons icon icon-description">format_align_left</i><b>Sobre o Evento</b></p>
+                                <hr class="content">
+                                <p class="content"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+                                    qui officia deserunt mollit anim id est laborum.</p>
+                                
+                                <p class="description"><i class="material-icons icon icon-description">list</i><b>Instruções</b></p>
+                                <hr class="content">
+                                <p class="content"><b>ENTENDA O PASSO A PASSO DO CREDENCIAMENTO</b><br/>
+                                <b>Passo 1:</b> Selecione a categoria na qual você se encaixa: Produtor Rural ou Visitante Profissional ou Visitante sem CNPJ.<br/>
+                                <b>Passo 2:</b> Selecione a atividade na qual deseja participar (gratuitas e pagas).<br/>
+                                <b>Passo 3:</b> Preencha seus dados e responda a pesquisa de credenciamento.<br/>
+                                <b>Passo 4:</b> Finalize seu credenciamento. Em caso de custos, selecione o método de pagamento.<br/>
+                                <b>Passo 5:</b> Você receberá seu comprovante de credenciamento via e-mail. Imprima o mesmo para agilizar sua entrada.</p>
+                            
+                                <p class="description"><i class="material-icons icon icon-description">people</i><b>Palestrantes</b></p>
+                                <hr class="content">
+                                <p class="content"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+                                    qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                        </section>
+                    
+                    <!-- Three -->
+                        <section id="schedule">
+                            <div class="schedule">
+                                <div class="col-md-6 col-lg-6 col-xs-6">
+                                    <p class="schedule">Inscrições</p>
+                                </div>
+                                <div class="col-md-6 col-lg-6 col-xs-6">
+                                    <div class="pull-right">
+                                        <button type="button" class="btn btn-user text btn-sm" style="height: 35px;"><i class="fas fa-sign-in-alt" style="margin-right: 5px;"></i>Acessar Área do Inscrito</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <section id="wizard">
+                                <div class="wizard-container">
+                                    <div class="wizard-card card-wd" data-color="blue" id="wizard">
+                                        <form action="" method="">
+                                            <div class="wizard-navigation">
+                                                <ul class="nav nav-pills">
+                                                    <li class="active"><a href="#type" data-toggle="tab">Categoria</a></li>
+                                                    <li><a href="#activities" data-toggle="tab">Atividades</a></li>
+                                                    <li><a href="#user" data-toggle="tab">Dados da Inscrição</a></li>
+                                                    <li><a href="#pay" data-toggle="tab">Pagamento</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="tab-content">
+                                                <div class="tab-pane active" id="type">
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-lg-12 col-xs-12">
+                                                            <h4 class="info-text align-center">Selecione uma categoria:</h4>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-lg-6 col-xs-12">
+                                                            <div id="card-type" class="card-type" rel="tooltip" title="Select this option if you have a house.">
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-lg-3 col-xs-12">
+                                                                        <div class="choice" data-toggle="wizard-radio">
+                                                                            <input type="radio" name="type" value="House">
+                                                                            <div class="icon">
+                                                                                <i class="fas fa-user-graduate fa-2x"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <div class="row" style="margin: 10px 0 0 10px;">
+                                                                            <div class="col-md-8 col-lg-8 col-xs-12">
+                                                                                <h6 class="type-name">Nome da Categoria Nome da Categoria Nome da Categoria Nome da Categoria</h6>
+                                                                            </div>
+                                                                            <div class="col-md-4 col-lg-4 col-xs-12">
+                                                                                <p class="actual-price xg"><b>Gratis</b></p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <ul class="col-xs-12 price">
+                                                                                <li class="align-center">
+                                                                                    <p class="xs"><b>até 10/10/2018</b></p>
+                                                                                    <p class="lg"><b>R$ 100,00</b></p>
+                                                                                </li>
+                                                                                <li class="align-center">
+                                                                                    <p class="xs">até 20/10/2018</p>
+                                                                                    <p class="lg">R$ 120,00</p>
+                                                                                </li>
+                                                                                <li class="align-center">
+                                                                                    <p class="xs">até 30/10/2018</p>
+                                                                                    <p class="lg">R$ 140,00</p>
+                                                                                </li>
+                                                                                <li class="align-center">
+                                                                                    <p class="xs">até 10/11/2018</p>
+                                                                                    <p class="lg">R$ 160,00</p>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- Modal Document User -->
+                                                                <div class="modal fade login" id="modalLogin">
+                                                                    <div class="modal-dialog modal-md login animated">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                                                <h4 class="modal-title">Informe o nome/documento do inscrito</h4>
+                                                                            </div>
+                                                                            <div class="modal-body">  
+                                                                                <div class="box">
+                                                                                    <div class="content">
+                                                                                        <div class="form loginBox form-info">
+                                                                                            <form method="post" action="/login" accept-charset="UTF-8" style="width: 85%; margin: 0 auto;">
+                                                                                                <div class="form-group label-floating">
+                                                                                                    <label class="control-label">Dado do Inscrito</label>
+                                                                                                    <input id="email" name="email" type="text" class="form-control">
+                                                                                                </div>
+                                                                                                <input class="btn btn-default btn-login" type="button" value="Validar">
+                                                                                            </form>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-6 col-xs-12">
+                                                            <div id="card-type" class="card-type" rel="tooltip" title="Select this option if you have a house.">
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-lg-3 col-xs-12">
+                                                                        <div class="choice" data-toggle="wizard-radio">
+                                                                            <input type="radio" name="type" value="House">
+                                                                            <div class="icon">
+                                                                                <i class="fas fa-user-graduate fa-2x"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <div class="row" style="margin: 10px 0 0 10px;">
+                                                                            <div class="col-md-8 col-lg-8 col-xs-12">
+                                                                                <h6 class="type-name">Nome da Categoria Nome da Categoria Nome da Categoria Nome da Categoria</h6>
+                                                                            </div>
+                                                                            <div class="col-md-4 col-lg-4 col-xs-12">
+                                                                                <p class="actual-price xg"><b>R$ 100,00</b></p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <ul class="col-xs-12 price">
+                                                                                <li class="align-center">
+                                                                                    <p class="xs"><b>até 10/10/2018</b></p>
+                                                                                    <p class="lg"><b>R$ 100,00</b></p>
+                                                                                </li>
+                                                                                <li class="align-center">
+                                                                                    <p class="xs">até 20/10/2018</p>
+                                                                                    <p class="lg">R$ 120,00</p>
+                                                                                </li>
+                                                                                <li class="align-center">
+                                                                                    <p class="xs">até 30/10/2018</p>
+                                                                                    <p class="lg">R$ 140,00</p>
+                                                                                </li>
+                                                                                <li class="align-center">
+                                                                                    <p class="xs">até 10/11/2018</p>
+                                                                                    <p class="lg">R$ 160,00</p>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <!--<div class="input-group col-md-12 col-lg-12 col-xs-12">
+                                                                            <div class="form-group label-floating">
+                                                                                <div class="row">
+                                                                                    <div class="col-md-11 col-lg-11 col-xs-11">
+                                                                                        <label class="control-label">Inserir nome ou documento do participante</label>
+                                                                                        <input name="name" type="text" class="form-control">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>-->
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal fade" id="modalInit" role="dialog">
+                                                                    <div class="modal-dialog modal-lg">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-body">
+                                                                                <div class="wizard input-group col-md-12 col-lg-12 col-xs-12" style="width: 100%">
+                                                                                    <div class="form-group label-floating">
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-11 col-lg-11 col-xs-11" style="margin-left: 20px;">
+                                                                                                <label class="control-label">Informe o nome ou documento do participante:</label>
+                                                                                                <input name="name" type="text" class="form-control">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-6 col-xs-12">
+                                                            <div id="card-type" class="card-type" rel="tooltip" title="Select this option if you have a house.">
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-lg-3 col-xs-12">
+                                                                        <div class="choice" data-toggle="wizard-radio">
+                                                                            <input type="radio" name="type" value="House">
+                                                                            <div class="icon">
+                                                                                <i class="fas fa-user-graduate fa-2x"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <div class="row" style="margin: 10px 0 0 10px;">
+                                                                            <div class="col-md-8 col-lg-8 col-xs-12">
+                                                                                <h6 class="type-name">Nome da Categoria Nome da Categoria Nome da Categoria Nome da Categoria</h6>
+                                                                            </div>
+                                                                            <div class="col-md-4 col-lg-4 col-xs-12">
+                                                                                <p class="actual-price xg"><b>R$ 100,00</b></p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <ul class="col-xs-12 price">
+                                                                                <li class="align-center">
+                                                                                    <p class="xs"><b>até 10/10/2018</b></p>
+                                                                                    <p class="lg"><b>R$ 100,00</b></p>
+                                                                                </li>
+                                                                                <li class="align-center">
+                                                                                    <p class="xs">até 20/10/2018</p>
+                                                                                    <p class="lg">R$ 120,00</p>
+                                                                                </li>
+                                                                                <li class="align-center">
+                                                                                    <p class="xs">até 30/10/2018</p>
+                                                                                    <p class="lg">R$ 140,00</p>
+                                                                                </li>
+                                                                                <li class="align-center">
+                                                                                    <p class="xs">até 10/11/2018</p>
+                                                                                    <p class="lg">R$ 160,00</p>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <!--<div class="input-group col-md-12 col-lg-12 col-xs-12">
+                                                                            <div class="form-group label-floating">
+                                                                                <div class="row">
+                                                                                    <div class="col-md-11 col-lg-11 col-xs-11">
+                                                                                        <label class="control-label">Inserir nome ou documento do participante</label>
+                                                                                        <input name="name" type="text" class="form-control">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>-->
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal fade" id="modalInit" role="dialog">
+                                                                    <div class="modal-dialog modal-lg">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-body">
+                                                                                <div class="wizard input-group col-md-12 col-lg-12 col-xs-12" style="width: 100%">
+                                                                                    <div class="form-group label-floating">
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-11 col-lg-11 col-xs-11" style="margin-left: 20px;">
+                                                                                                <label class="control-label">Informe o nome ou documento do participante:</label>
+                                                                                                <input name="name" type="text" class="form-control">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-6 col-xs-12">
+                                                            <div id="card-type" class="card-type" rel="tooltip" title="Select this option if you have a house.">
+                                                                <div class="row">
+                                                                    <div class="col-md-3 col-lg-3 col-xs-12">
+                                                                        <div class="choice" data-toggle="wizard-radio">
+                                                                            <input type="radio" name="type" value="House">
+                                                                            <div class="icon">
+                                                                                <i class="fas fa-user-graduate fa-2x"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-9">
+                                                                        <div class="row" style="margin: 10px 0 0 10px;">
+                                                                            <div class="col-md-8 col-lg-8 col-xs-12">
+                                                                                <h6 class="type-name">Nome da Categoria Nome da Categoria Nome da Categoria Nome da Categoria</h6>
+                                                                            </div>
+                                                                            <div class="col-md-4 col-lg-4 col-xs-12">
+                                                                                <p class="actual-price xg"><b>R$ 100,00</b></p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <ul class="col-xs-12 price">
+                                                                                <li class="align-center">
+                                                                                    <p class="xs"><b>até 10/10/2018</b></p>
+                                                                                    <p class="lg"><b>R$ 100,00</b></p>
+                                                                                </li>
+                                                                                <li class="align-center">
+                                                                                    <p class="xs">até 20/10/2018</p>
+                                                                                    <p class="lg">R$ 120,00</p>
+                                                                                </li>
+                                                                                <li class="align-center">
+                                                                                    <p class="xs">até 30/10/2018</p>
+                                                                                    <p class="lg">R$ 140,00</p>
+                                                                                </li>
+                                                                                <li class="align-center">
+                                                                                    <p class="xs">até 10/11/2018</p>
+                                                                                    <p class="lg">R$ 160,00</p>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <!--<div class="input-group col-md-12 col-lg-12 col-xs-12">
+                                                                            <div class="form-group label-floating">
+                                                                                <div class="row">
+                                                                                    <div class="col-md-11 col-lg-11 col-xs-11">
+                                                                                        <label class="control-label">Inserir nome ou documento do participante</label>
+                                                                                        <input name="name" type="text" class="form-control">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>-->
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal fade" id="modalInit" role="dialog">
+                                                                    <div class="modal-dialog modal-lg">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-body">
+                                                                                <div class="wizard input-group col-md-12 col-lg-12 col-xs-12" style="width: 100%">
+                                                                                    <div class="form-group label-floating">
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-11 col-lg-11 col-xs-11" style="margin-left: 20px;">
+                                                                                                <label class="control-label">Informe o nome ou documento do participante:</label>
+                                                                                                <input name="name" type="text" class="form-control">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="tab-pane" id="activities">
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="col-md-2 col-lg-2 hidden-xs"></div>
+                                                            <div class="col-md-8 col-lg-8 col-xs-6">
+                                                                <h4 class="info-text"> Escolha as atividades: </h4>
+                                                            </div>
+                                                            <div class="col-md-2 col-lg-2 col-xs-6">
+                                                                <div id="counter" class="counter row pull-right" style="background-color: rgba(76,175,80, 0.2);">
+                                                                    <i class="fas fa-clock" style="padding: 5px 5px 5px 5px; color: rgb(76,175,80);"></i>
+                                                                    <h4><b>25:39</b></h4>
+                                                                </div>
+
+                                                            <!--<div class="counter row" style="vertical-align: middle; height: 45px; font-size: 24px; margin-bottom: 10px; padding: 5px; background-color: rgba(255,152,0, 0.3);">
+                                                                <i class="fas fa-clock" style="padding: 5px 5px 5px 5px; color: rgb(255,152,0);"></i>
+                                                                <h4><b>04:39</b></h4>
+                                                            </div>
+
+                                                            <div class="counter row" style="vertical-align: middle; height: 45px; font-size: 24px; margin-bottom: 10px; padding: 5px; background-color: rgba(255,229,0, 0.3);">
+                                                                <i class="fas fa-clock" style="padding: 5px 5px 5px 5px; color: rgb(255,199,0);"></i>
+                                                                <h4><b>00:39</b></h4>
+                                                            </div>
+                                                            
+                                                                <p class="xs" style="line-height: 14px; font-size: 12px; width: 240px; text-align: justify; margin: 0 10px 0 10px">
+                                                                    Finalize sua inscrição dentro do tempo apresentado. Ao terminar o tempo, a inscrição não será mais válida.
+                                                                </p>-->
+                                                            </div>
+
+                                                            <div class="panel panel-heading">
+                                                                <div id="buttonGroup" class="btn-group-g centered row">
+                                                                    <div class="col-md-12 col-lg-12 col-xs-12">
+                                                                        <button type="button" class="btn btn-filter" data-target="all">Todos os dias</button>
+                                                                        <button type="button" class="btn btn-filter" data-target="day1">07/11</button>
+                                                                        <button type="button" class="btn btn-filter" data-target="day2">08/11</button>
+                                                                        <button type="button" class="btn btn-filter" data-target="day3">09/11</button>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="filter centered">
+                                                                    <p class="xs">Filtrar por:</p>
+                                                                    <div href="#" class="btn btn-tag btn-xs active">Programação Completa</div>
+                                                                    <div href="#" class="btn btn-tag btn-xs">Palestras</div>
+                                                                    <div href="#" class="btn btn-tag btn-xs">Workshops</div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="panel panel-body">
+                                                                <div id="search" class="input-group col-md-10 col-xs-12">
+                                                                    <div class="form-group label-floating" style="margin: 10px 0 0 0;">
+                                                                        <div class="row">
+                                                                            <div class="col-md-3 col-lg-3 col-xs-11">
+                                                                                <label class="control-label">Buscar atividade</label>
+                                                                                <input name="name" type="text" class="form-control">
+                                                                            </div>
+                                                                            <a href="#" class="text-info"><i class="fas fa-search" style="margin: 5px 0 0 5px;"></i></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Labels -->
+                                                                <div class="col-md-10 col-md-offset-1 hidden-xs" style="margin-bottom: 10px; color: rgb(47,184,197)">
+                                                                    <div class="palestra row hidden-xs">
+                                                                        <div class="col-md-2 hidden-xs"></div>
+                                                                        <div class="col-md-7 hidden-xs" style="text-align: left;">
+                                                                            <p class="lg">Atividades</p>
+                                                                        </div>
+                                                                        <div class="col-md-2 hidden-xs">
+                                                                            <p class="lg">Valor</p>  
+                                                                        </div>
+                                                                        <div class="col-md-1 hidden-xs align-center">
+                                                                            <p class="lg">Participar</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div id="table" class="col-md-10 col-md-offset-1 col-xs-12">
+                                                                    <div id="activity" data-status="day1" class="plan">
+                                                                        <div class="palestra row">
+                                                                            <div class="col-md-2 col-lg-2 col-xs-12">
+                                                                                    <div class="type">
+                                                                                    <i class="icon material-icons" style="font-size:42px;">record_voice_over</i>
+                                                                                </div>
+                                                                                <p class="xs">07/11  -  13:00 às 14:00</p>
+                                                                            </div>
+                                                                            <div class="col-md-7 col-lg-7 col-xs-12" style="text-align: left;">
+                                                                                <h4 style="margin-bottom: 0; text-align: left; margin-left: 10px;">Abertura Oficial da Semana Internacional do Café 2018</h4>
+                                                                                <p class="xs" style="text-align: left; margin-left: 10px; line-height: 14px;">Boas-vindas aos patrocinadores, apoiadores e visitantes do maior encontro de café do Brasil.</p>
+                                                                                <div class="tag" style="text-align: left;">
+                                                                                    <div class="btn btn-tag btn-xs">Palestras</div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-2 col-lg-2 col-xs-12">
+                                                                                <p class="xs" style="margin-top: 10px; font-size: 16px;">Gratuito</p>  
+                                                                            </div>
+                                                                            <div class="col-md-1 col-lg-1 col-xs-12 align-center">
+                                                                                <div class="checkbox">
+                                                                                    <label for="checkbox1">
+                                                                                        <label class="hidden-lg hidden-md">Participar</label>
+                                                                                        <input type="checkbox" id="checkbox1">
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <div id="activity" data-status="day1" class="plan">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2 col-lg-2 col-xs-12">
+                                                                                <div class="type" style="color: rgb(127,127,127)">
+                                                                                    <i class="fas fa-chalkboard-teacher fa-2x"></i>
+                                                                                </div>
+                                                                                <p class="xs">07/11  -  15:15 - 16:45</p>
+                                                                            </div>
+                                                                            <div class="col-md-7 col-lg-7 col-xs-12" style="text-align: left;">
+                                                                                <h4 style="margin-bottom: 0; text-align: left; margin-left: 10px;">Café – A Bebida Mais Consumida do Mundo</h4>
+                                                                                <p class="xs" style="text-align: left; margin-left: 10px; line-height: 14px;">Moderador: <b>Flavia Barbosa Paulino da Costa</b></p>
+                                                                                <div class="tag" style="text-align: left;">
+                                                                                    <div class="btn btn-tag btn-xs">Workshop</div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-2 col-lg-2 col-xs-12">
+                                                                                <p class="xs" style="margin-top: 10px; font-size: 16px;">Gratuito</p>  
+                                                                            </div>
+                                                                            <div class="col-md-1 col-lg-1 col-xs-12 align-center">
+                                                                                <div class="checkbox">
+                                                                                    <label for="checkbox2">
+                                                                                        <label class="hidden-lg hidden-md">Participar</label>
+                                                                                        <input type="checkbox" id="checkbox2">
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div id="activity" data-status="day2" class="plan" style="background-color: rgb(127,127,127,0.1);">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2 col-lg-2 col-xs-12">
+                                                                                <div class="type" style="color: rgb(127,127,127);">
+                                                                                    <i class="fas fa-desktop fa-2x"></i>
+                                                                                </div>
+                                                                                <p class="xs">08/11  -  13:00 - 14:00</p>
+                                                                            </div>
+                                                                            <div class="col-md-7 col-lg-7 col-xs-12" style="text-align: left;">
+                                                                                <h4 style="margin-bottom: 0; text-align: left; margin-left: 10px;">Café – A Bebida Mais Consumida do Mundo</h4>
+                                                                                <p class="xs" style="text-align: left; margin-left: 10px; line-height: 14px;">Moderador: <b>Flavia Barbosa Paulino da Costa</b></p>
+                                                                                <div class="tag" style="text-align: left;">
+                                                                                    <div class="btn btn-tag btn-xs">Online</div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-2 col-lg-2 col-xs-12">
+                                                                                <p class="xs"><i>Esgotado</i></p>  
+                                                                                <div class="tag" style="text-align: center;">
+                                                                                    <div class="btn btn-tag btn-xs" style="background-color: rgb(227,227,227); ">Avise-me quando <br>disponível</div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-1 col-lg-1 col-xs-12 align-center">
+                                                                                <div class="checkbox">
+                                                                                    <label for="checkbox3">
+                                                                                        <label class="hidden-lg hidden-md">Participar</label>
+                                                                                        <input type="checkbox" id="checkbox3">
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div id="activity" data-status="day2" class="plan" style="background-color: rgba(250,137,8,0.2)">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2 col-lg-2 col-xs-12">
+                                                                                <div class="type" style="color: rgb(127,127,127);">
+                                                                                        <i class="far fa-comment-alt fa-2x"></i>
+                                                                                </div>
+                                                                                <p class="xs">08/11  -  09:00 - 18:45</p>
+                                                                                <p class="xs">09/11  -  09:00 - 18:45</p>
+                                                                            </div>
+                                                                            <div class="col-md-7 col-lg-7 col-xs-12" style="text-align: left;">
+                                                                                <h4 style="margin-bottom: 0; text-align: left; margin-left: 10px;">Conferência Global de Sustentabilidade do Café 2018</h4>
+                                                                                <div id="box-toggle" style="text-align: left; margin-left: 10px; padding: 0; line-height: 14px;"><p class="xs" style="text-align:justify; line-height: 14px;">Promovida pela Plataforma Global do Café, a Conferência Global de 
+                                                                                    Sustentabilidade do Café 2018...</p>
+                                                                                    <div class="tgl"><p class="xs" style="text-align: justify; line-height: 14px;">será realizada em Belo Horizonte, 
+                                                                                        durante a Semana Internacional do Café. A conferência é um dos principais eventos mundiais sobre sustentabilidade do café 
+                                                                                        e é uma excelente oportunidade para as pessoas ficarem por dentro das tendências, inovações e práticas relacionadas à 
+                                                                                        sustentabilidade do café.</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="tag" style="text-align: left;">
+                                                                                    <div class="btn btn-tag btn-xs">Debate</div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-2 col-lg-2 col-xs-12">
+                                                                                <p class="xs" style="margin-top: 10px; font-size: 16px;">R$ 100,00</p>  
+                                                                            </div>
+                                                                            <div class="col-md-1 col-lg-1 col-xs-12 align-center">
+                                                                                <div class="checkbox">
+                                                                                    <label for="checkbox4">
+                                                                                        <label class="hidden-lg hidden-md">Participar</label>
+                                                                                        <input type="checkbox" id="checkbox4">
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div id="activity" data-status="day3" class="plan" style="background-color: rgba(30,255,41,0.1)">
+                                                                        <div class="palestra row">
+                                                                            <div class="col-md-2 col-lg-2 col-xs-12">
+                                                                                    <div class="type">
+                                                                                    <i class="icon material-icons" style="font-size: 42px;">record_voice_over</i>
+                                                                                </div>
+                                                                                <p class="xs">09/11  -  14:00 - 15:15</p>
+                                                                            </div>
+                                                                            <div class="col-md-7 col-lg-7 col-xs-12" style="text-align: left;">
+                                                                                <h4 style="margin-bottom: 0; text-align: left; margin-left: 10px;">Fermentando Inovação</h4>
+                                                                                <p class="xs" style="text-align: left; margin-left: 10px; line-height: 14px;">Moderador: <b>Pierre Vilela</b> Programa NovoAgro 4.0 (INAES/Sistema FAEMG)<br>
+                                                                                            Palestrante: <b>Gabriel Nunes</b> (Nunes Coffee)
+                                                                                </p>
+                                                                                <div class="tag" style="text-align: left;">
+                                                                                    <div class="btn btn-tag btn-xs">Palestra</div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-2 col-lg-2 col-xs-12">
+                                                                                <p class="xs" style="margin-top: 10px; font-size: 16px;">R$ 10,00</p>  
+                                                                            </div>
+                                                                            <div class="col-md-1 col-lg-1 col-xs-12 align-center">
+                                                                                <div class="checkbox">
+                                                                                    <label for="checkbox5">
+                                                                                        <label class="hidden-lg hidden-md">Participar</label>
+                                                                                        <input type="checkbox" id="checkbox5">
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                                
+                                                <div class="tab-pane" id="user">
+                                                    <div class="row">
+                                                        <div class="col-md-2 col-lg-2 hidden-xs"></div>
+                                                        <div class="col-md-8 col-lg-8 col-xs-6">
+                                                            <h4 class="info-text"> Preencha com os dados do inscrito: </h4>
+                                                        </div>
+                                                        <div class="col-md-2 col-lg-2 col-xs-6">
+                                                            <div class="counter row pull-right" style="background-color: rgba(255,152,0, 0.2);">
+                                                                <i class="fas fa-clock" style="padding: 5px 5px 5px 5px; color: rgb(255,152,0);"></i>
+                                                                <h4><b>04:39</b></h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Dados Pessoais -->
+                                                    <div class="appointment-box">
+                                                        <h4 style="margin-bottom: 0;">Dados Pessoais</h4>
+                                                        <!-- Nome, CPF, Gênero -->
+                                                        <div class="input-group col-md-12 col-lg-12 col-xs-12">
+                                                            <div class="row">
+                                                                <div class="col-md-6 col-lg-6 col-xs-12">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">E-mail</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-xs-12">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">CPF</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-6 col-lg-6 col-xs-12">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">Nome Completo</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-xs-12">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">Nome para o crachá</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-3 col-lg-3 col-xs-12">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">Gênero</label>
+                                                                        <select class="form-control">
+                                                                            <option disabled="" selected=""></option>
+                                                                            <option value="Feminino"> Feminino </option>
+                                                                            <option value="Masculino"> Masculino </option>
+                                                                            <option value="Não binário"> Não binário </option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-1 col-lg-1 col-xs-4">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">DDI</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-2 col-lg-2 col-xs-8">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">Telefone</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 col-lg-3 col-xs-12">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">Data de Nascimento</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Endereço -->
+                                                        <div class="input-group col-md-12 col-lg-12 col-xs-12">
+                                                            <div class="row">
+                                                                <div class="col-md-4 col-lg-4 col-xs-8">
+                                                                    <div class="form-group label-floating" style="margin: 10px 0 0 0;">
+                                                                        <div class="row">
+                                                                            <div class="col-md-8 col-lg-8 col-xs-10">
+                                                                                <label class="control-label">CEP</label>
+                                                                                <input name="name" type="text" class="form-control">
+                                                                            </div>
+                                                                            <a href="#" class="text-info"><i class="fas fa-search" style="margin: 5px 0 0 5px;"></i></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-xs-8">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">Endereço</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-2 col-lg-2 col-xs-4">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">N°</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-3 col-lg-3 col-xs-12">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">Bairro</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 col-lg-4 col-xs-12">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">Cidade</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-1 col-lg-1 col-xs-4">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">UF</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 col-lg-4 col-xs-8">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">País</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Dados Comerciais -->
+                                                    <div class="appointment-box">
+                                                        <h4 style="margin-bottom: 0;">Dados Comerciais</h4>
+                                                        <!-- Razão Social, Nome Fantasia, CNPJ -->
+                                                        <div class="input-group col-md-12 col-lg-12 col-xs-12">
+                                                            <div class="row">
+                                                                <div class="col-md-6 col-lg-6 col-xs-12">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">Razão Social</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-xs-12">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">Nome Fantasia</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-3 col-lg-3 col-xs-12">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">CNPJ</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 col-lg-3 col-xs-12">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">Inscrição Municipal</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 col-lg-3 col-xs-8">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">Inscrição Estadual</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 col-lg-3 col-xs-4 align-left">
+                                                                    <div class="checkbox">
+                                                                        <label for="checkbox">Isento
+                                                                            <input type="checkbox" id="checkbox">
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Endereço -->
+                                                        <div class="input-group col-md-12 col-lg-12 col-xs-12">
+                                                            <div class="row">
+                                                                <div class="col-md-4 col-lg-4 col-xs-8">
+                                                                    <div class="form-group label-floating" style="margin: 10px 0 0 0;">
+                                                                        <div class="row">
+                                                                            <div class="col-md-8 col-lg-8 col-xs-10">
+                                                                                <label class="control-label">CEP</label>
+                                                                                <input name="name" type="text" class="form-control">
+                                                                            </div>
+                                                                            <a href="#" class="text-info"><i class="fas fa-search" style="margin: 5px 0 0 5px;"></i></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6 col-lg-6 col-xs-8">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">Endereço</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-2 col-lg-2 col-xs-4">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">N°</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-3 col-lg-3 col-xs-12">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">Bairro</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 col-lg-4 col-xs-12">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">Cidade</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-1 col-lg-1 col-xs-4">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">UF</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 col-lg-4 col-xs-8">
+                                                                    <div class="form-group label-floating">
+                                                                        <label class="control-label">País</label>
+                                                                        <input name="name" type="text" class="form-control">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="align-left">
+                                                        <div class="checkbox" style="margin: 0 10px 0 10px;">
+                                                            <label for="term" style="color: rgb(153,153,153)"><input type="checkbox" id="term">Li e concordo com os <a href="#terms" data-toggle="modal">termos do evento.</a>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal fade login" id="terms">
+                                                        <div class="modal-dialog modal-lg login animated">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header" style="padding: 10px 10px 0 10px;">
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                                    <h5 class="modal-title" style="margin: 0 0 0 5px;">Termos do Evento:</h5>
+                                                                </div>
+                                                                <div class="modal-body" style="padding: 20px;">
+                                                                    <div style="border: 1px solid #e5e5e5; height: 200px; overflow: auto; padding: 10px;">
+                                                                        <p>Lorem ipsum dolor sit amet, veniam numquam has te. No suas nonumes recusabo mea, est ut graeci definitiones. His ne melius vituperata scriptorem, cum paulo copiosae conclusionemque at. Facer inermis ius in, ad brute nominati referrentur vis. Dicat erant sit ex. Phaedrum imperdiet scribentur vix no, ad latine similique forensibus vel.</p>
+                                                                        <p>Dolore populo vivendum vis eu, mei quaestio liberavisse ex. Electram necessitatibus ut vel, quo at probatus oportere, molestie conclusionemque pri cu. Brute augue tincidunt vim id, ne munere fierent rationibus mei. Ut pro volutpat praesent qualisque, an iisque scripta intellegebat eam.</p>
+                                                                        <p>Mea ea nonumy labores lobortis, duo quaestio antiopam inimicus et. Ea natum solet iisque quo, prodesset mnesarchum ne vim. Sonet detraxit temporibus no has. Omnium blandit in vim, mea at omnium oblique.</p>
+                                                                        <p>Eum ea quidam oportere imperdiet, facer oportere vituperatoribus eu vix, mea ei iisque legendos hendrerit. Blandit comprehensam eu his, ad eros veniam ridens eum. Id odio lobortis elaboraret pro. Vix te fabulas partiendo.</p>
+                                                                        <p>Natum oportere et qui, vis graeco tincidunt instructior an, autem elitr noster per et. Mea eu mundi qualisque. Quo nemore nusquam vituperata et, mea ut abhorreant deseruisse, cu nostrud postulant dissentias qui. Postea tincidunt vel eu.</p>
+                                                                        <p>Ad eos alia inermis nominavi, eum nibh docendi definitionem no. Ius eu stet mucius nonumes, no mea facilis philosophia necessitatibus. Te eam vidit iisque legendos, vero meliore deserunt ius ea. An qui inimicus inciderint.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                                
+                                                <div class="tab-pane" id="pay">
+                                                    <div class="col-md-2 col-lg-2 hidden-xs"></div>
+                                                    <div class="col-md-8 col-lg-8 col-xs-6">
+                                                        <h4 class="info-text">Realizar pagamento</h4>
+                                                    </div>
+                                                    <div class="col-md-2 col-lg-2 col-xs-6">
+                                                        <div class="counter row pull-right" style="background-color: rgba(255,17,0, 0.2);">
+                                                            <i class="fas fa-clock" style="padding: 5px 5px 5px 5px; color: rgb(255,17,0);"></i>
+                                                            <h4><b>00:39</b></h4>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <!-- Resumo da Inscrição -->
+                                                        <div class="col-md-6 col-lg-6 col-xs-12">
+                                                            <div class="checkout">
+                                                                <h4 style="margin-bottom: 0;">Resumo da Inscrição</h4>
+
+                                                                <!--  Categoria de Inscrição  -->
+                                                                <div class="align-left">
+                                                                    <div class="col-md-12 col-lg-12 col-xs-12">
+                                                                        <p class="title-lg"> Categoria </p>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-md-8 col-lg-10 col-xs-8 align-center">
+                                                                            <p class="title-xs">Categoria 1</p>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-lg-2 col-xs-4">
+                                                                            <p class="title-xs" style="text-align: right">R$ 100,00</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!--  Atividades  -->
+                                                                <div class="align-left">
+                                                                    <div class="col-md-12 col-lg-12 col-xs-12">
+                                                                        <p class="title-lg"> Atividade </p>
+                                                                    </div>
+
+                                                                    <div class="row align-left">
+                                                                        <div class="col-md-8 col-lg-8 col-sm-8 col-xs-8">
+                                                                            <p class="title-xs">DNA Café - Tendência de Processamento e Comercialização de Cafés Especiais</p>
+                                                                        </div>
+                                                                        <div class="col-lg-2 col-xs-2 hidden-md hidden-sm hidden-xs">
+                                                                            <p class="title-xs">08/11/2015</p>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-lg-2 col-sm-4 col-xs-4 align-right">
+                                                                            <p class="title-xs" style="text-align: right">R$ 130,00</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row align-left">
+                                                                        <div class="col-md-8 col-lg-8 col-sm-8 col-xs-8">
+                                                                            <p class="title-xs">Fórum da Cafeicultura Sustentável - Desafios Econômicos com Responsabilidade Ambiental</p>
+                                                                        </div>
+                                                                        <div class="col-lg-2 col-xs-2 hidden-md hidden-sm hidden-xs">
+                                                                            <p class="title-xs">09/11/2015</p>
+                                                                        </div>
+                                                                        <div class="col-md-4 col-lg-2 col-sm-4 col-xs-4 align-right">
+                                                                            <p class="title-xs" style="text-align: right">Gratuito</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Cupom -->
+                                                                <div id="cupom2" class="row">
+                                                                    <div id="show-discount2" class="pull-right" style="margin-bottom: 20px;">
+                                                                        <a href="javascript:;" class="text-md">Aplicar cupom de desconto</a>
+                                                                    </div>
+                                                                    <div id="discount2" class="pull-right wizard-discount form-card" style="max-width: 290px; margin-bottom: 20px;">
+                                                                        <div id="cupom2" class="row">
+                                                                            <input id="cod2" type="text" placeholder="Código" style="margin-left: 0px; margin-top: 5px; margin-bottom: 15px; "/>
+                                                                            <input id="apply2" type="button" class="pull-right btn btn-sm" style="margin: 5px 0 15px 0; height: 30px; background-color: rgb(229,96,37)" name="code2" value="Aplicar"/>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                <!-- Alert -->
+                                                                <div id="confirm2" class="row">
+                                                                    <!-- Cupom negado -->
+                                                                    <!--<div class="col-md-7 col-lg-7 col-xs-12">
+                                                                        <p class="text-xs text-danger align-left" style="text-align: right; margin-bottom: 0px;"><i class="fas fa-times"></i> Código inválido. </p>
+                                                                    </div>-->
+                                                                    
+                                                                    <!-- Cupom aplicado -->
+                                                                    <div class="col-md-7 col-lg-7 col-xs-12">
+                                                                        <p class="text-xs text-success align-left" style="margin-bottom: 0px; margin-bottom: 20px;"><i class="fas fa-check"></i> Cupom aplicado com sucesso! </p>
+                                                                    </div>
+                                                                    <div class="col-md-5 col-lg-5 col-xs-12">
+                                                                        <p class="text-lg text-success" style="margin-bottom: 20px; text-align: right">Desconto aplicado: <strong class="text-success"> -R$ 100,00</strong></p>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Resumo -->
+                                                                <div class="row" style="background-color: rgb(244,244,244); height: 24px; padding: 6px;">
+                                                                    <div class="col-md-6 col-lg-6 col-xs-3"></div>
+                                                                    <div class="col-md-6 col-lg-6 col-xs-9">
+                                                                        <p style="color: black; text-align: right; margin-left: 5px;">Total <strong>R$ 1350,00</strong></p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Formas de Pagamento -->
+                                                        <div class="col-md-6 col-lg-6 col-xs-12">
+                                                            <div class="checkout">
+                                                                <h4 style="margin-bottom: 0;">Formas de Pagamento</h4>
+
+                                                                <ul id="tab-button">
+                                                                    <li class="tab-button">
+                                                                        <a href="#tab01" class="active" style="font-size: 14px;">
+                                                                            <i class="far fa-credit-card fa-2x float-left" aria-hidden="true" style="margin-right: 5px;"></i><br>
+                                                                            Cartão de Crédito
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="tab-button">
+                                                                        <a href="#tab02" style="font-size: 14px;">
+                                                                            <i class="fas fa-credit-card fa-2x float-left" aria-hidden="true" style="margin-right: 5px;"></i><br>
+                                                                            Cartão de Débito</a>
+                                                                    </li>
+                                                                    <li class="tab-button">
+                                                                        <a href="#tab03" style="font-size: 14px;">
+                                                                            <i class="fas fa-barcode fa-2x float-left" aria-hidden="true" style="margin-left: 2px; margin-right: 7px;"></i><br>
+                                                                            Boleto
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+
+                                                                <!-- Cartão de Crédito -->
+                                                                <div id="tab01" class="tab-contents">
+                                                                    <div class="row">
+                                                                        <!-- Cartão -->
+                                                                        <div class="col-md-12 col-lg-12 col-xs-12">
+                                                                            <div class="flip-container">
+                                                                                <div class="flipper">
+                                                                                    <div class="front">
+                                                                                        <div class="credit-card">
+                                                                                            <div class="card__sim"></div>
+                                                                                            <div class="card__number"> XXXX XXXX XXXX XXXX </div>
+                                                                                            <div class="card__little-number"> Número do Cartão </div>
+                                                                                            <div class="card__little-letter"> Válido até </div>
+                                                                                            <div class="card__expiration"> 
+                                                                                                <div class="card__month"> XX </div>
+                                                                                                <span>/</span>
+                                                                                                <div class="card__year"> XX </div>
+                                                                                            </div>
+                                                                                            <div class="card__name"> XXXXXXX XXXXXXXXX </div>
+                                                                                            <div class="card__type">
+                                                                                                <img id="card__image" />
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="back">
+                                                                                        <div class="credit-card">
+                                                                                            <div class="card__black"></div>
+                                                                                            <div class="card__skyblue"></div>
+                                                                                            <div class="card__cvv"> XXX </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <!-- Inputs -->
+                                                                        <form class="form-card col-md-12 col-lg-12 col-xs-12">
+                                                                            <div id="credit-card" class="col-md-12 col-lg-12 col-xs-12 align-center">
+                                                                                <div id="front">
+                                                                                    <div class="block form-card">
+                                                                                        <label for="number" class="control-label">Número do Cartão</label>
+                                                                                        <input id="number" type="number" maxlength="16" />
+                                                                                    </div>
+                                                                                    <div class="block form-card">
+                                                                                        <label for="name-card" class="control-label">Nome do Titular</label>
+                                                                                        <input id="name-card" type="text" maxlength="24"  style="margin-left: 0px; margin-right: 0px;"/>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="row block form-card align-center">
+                                                                                    <div id="front" class="col-md-8 col-lg-8 col-xs-8">
+                                                                                        <label for="month" class="control-label">Válido até</label><br>
+                                                                                        <input id="month" type="number" maxlength="2" />
+                                                                                        <span>/</span>
+                                                                                        <input id="year" type="number" maxlength="2" />
+                                                                                    </div>
+                                                                                    <div id="back" class="col-md-2 col-lg-2 col-xs-2">
+                                                                                        <label for="cvv" class="control-label">CVV</label>
+                                                                                        <input id="cvv" type="number" maxlength="3" />
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="block form-card" style="margin: 0 auto;">
+                                                                                    <div id="front" class="col-md-12 col-lg-12 col-xs-12 form-group label-floating" style="margin-top: 50px; width: 100%;">
+                                                                                        <label class="control-label">Parcelas</label>
+                                                                                        <select class="form-control">
+                                                                                            <option value="1"> 1x sem juros </option>
+                                                                                            <option value="2"> 2x sem juros </option>
+                                                                                            <option value="3"> 3x sem juros </option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-12 col-lg-12 col-xs-12">
+                                                                                <input type='button' class='btn btn-finish btn-fill btn-info btn-wd' id="finish" name='finish' value='Pagar' data-toggle="modal" data-target="#modalPay"/>
+                                                                            </div>
+                                                                        </form>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Cartão de Débito -->
+                                                                <div id="tab02" class="tab-contents">
+                                                                    <p class="text-md" style="margin: 10px 0 10px 0;"> Selecione o seu banco para finalizar o pagamento: </p>
+                                                                    <div class="input-group col-md-12 col-lg-12 col-xs-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12 col-lg-12 col-xs-12 align-center">
+                                                                                <div class="form-group label-floating">
+                                                                                    <label class="control-label">Banco</label>
+                                                                                    <select class="form-control">
+                                                                                        <option disabled="" selected=""></option>
+                                                                                        <option value="Banco do Brasil"> Banco do Brasil </option>
+                                                                                        <option value="Bradesco"> Bradesco </option>
+                                                                                        <option value="Itau"> Itaú </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-12 col-lg-12 col-xs-12">
+                                                                                <input type='button' class='btn btn-finish btn-fill btn-info btn-wd' id='finish' name='finish' value='Pagar' onclick="showVoucher()"/>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Boleto -->
+                                                                <div id="tab03" class="tab-contents">
+                                                                    <div class="input-group col-md-12 col-lg-12 col-xs-12" style="margin-top: 5px;">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12 col-lg-12 col-xs-12">
+                                                                                <div class="form-group label-floating" style="margin-left: 0px">
+                                                                                    <label class="control-label">Gerar boleto em nome de:</label>
+                                                                                    <input name="name" type="text" class="form-control">
+                                                                                </div>
+                                                                            </div>
+                                                                            <!--<div class="col-md-3 col-lg-3 col-xs-2 align-left">
+                                                                                <div class="checkbox">
+                                                                                    <label for="checkboxPay" style="margin-left: 15px;">
+                                                                                        <input type="checkbox" id="checkboxPay">Mesmo titular
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>-->
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-md-4 col-lg-3 col-xs-12">
+                                                                                <div class="form-group label-floating" style="margin-left: 0px">
+                                                                                    <label class="control-label">Documento</label>
+                                                                                    <select class="form-control">
+                                                                                        <option disabled="" selected=""></option>
+                                                                                        <option value="CPF"> CPF </option>
+                                                                                        <option value="CNPJ"> CNPJ </option>
+                                                                                        <option value="Estrangeiro"> Estrangeiro </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-8 col-lg-9 col-xs-12">
+                                                                                <div class="form-group label-floating" style="margin-left: 0px">
+                                                                                    <label class="control-label">Número do Documento</label>
+                                                                                    <input name="name" type="text" class="form-control">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="align-left">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12" style="text-align: justify;">
+                                                                                <p class="text-xs"> Ao confirmar a compra, seu boleto será exibido na próxima página. Ele pode ser impresso e pago em uma agência 
+                                                                                        bancária ou através da internet, utilizando o código de barras do boleto. Você também poderá visualizar e imprimir o seu boleto bancário 
+                                                                                        acessando a Área do Inscrito.<br><br>
+                                                                                        <b>O prazo de validade do boleto é de 2 dias úteis.</b><br><br>
+                                                                                        Se o pagamento não for efetuado até a data de vencimento, o boleto perderá a validade e
+                                                                                        seu pedido será cancelado automaticamente. Sua inscrição será confirmada e-mail cadastrado assim que recebermos a confirmação do pagamento, 
+                                                                                        o que pode demorar até 2 dias úteis.</p>
+                                                                            </div>
+                                                                            <div class="col-md-12 col-lg-12 col-xs-12">
+                                                                                <input type='button' class='btn btn-finish btn-fill btn-info btn-wd' id="finish" name='finish' value='Pagar'/>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- Modal Pay Refused -->
+                                                                <div class="modal fade" id="modalPay" role="dialog">
+                                                                    <div class="modal-dialog modal-md">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-body">
+                                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                                <div style="margin-top: 20px; text-align: center;">
+                                                                                    <img src="images/cancel.png" style="height: 50px; margin: 20px;">
+                                                                                    <p><b>Seu pagamento não foi autorizado.</b></p>
+                                                                                    <p class="xs" style="margin: 10px 0; padding: 10px 30px 10px 30px; font-size: 14px; line-height: 16px; width: 550px; margin: 0 auto; margin-bottom: 20px; text-align: center">
+                                                                                        Um ou vários dados preenchidos durante a compra estão incorretos ou não puderam ser validados com o banco emissor do 
+                                                                                        cartão. <br><br> 
+                                                                                        Você podse revisar os dados informados e tentar novamente, ou tentar novamente usando outra forma de pagamento.</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- Info Moip -->
+                                                            <div id="moip" class="moip">
+                                                                <div class="row">
+                                                                    <div class="col-md-9" style="padding: 10px;">
+                                                                        <p id="logo-moip" class="xs" style="line-height: 24px; text-align: justify;">Os pagamentos são processados pelo <img src="images/logo-moip.png" style="vertical-align: middle;"/></p>
+                                                                        <p class="xs" style="margin-top: 5px; line-height: 16px; text-align: justify;"> O Moip utiliza diversos protocolos de 
+                                                                            segurança para manter suas informações seguras. O número do cartão de crédito, débito ou os dados 
+                                                                            de transferência bancária não ficam armazenados na loja, toda operação ocorre entre o computador do 
+                                                                            cliente e o site do Moip.</p>
+                                                                    </div>
+                                                                    <div id="logo-card" class="col-md-3 col-lg-3 col-xs-12" style="margin: 0px;">
+                                                                        <p class="xs" style="line-height: 24px;">Bandeiras aceitas</p>
+                                                                        <img src="images/visa.png"/>
+                                                                        <img src="images/master.png"/>
+                                                                        <img src="images/hiper.png"/>
+                                                                        <img src="images/elo.png"/>
+                                                                        <img src="images/diners.png"/>
+                                                                        <img src="images/hipercard.png"/>
+                                                                        <img src="images/amex.png"/>
+                                                                        <img src="images/itau.png"/>
+                                                                        <img src="images/bradesco.png"/>
+                                                                        <img src="images/bb.png"/>
+                                                                        <img src="images/banrisul.png"/>
+                                                                        <img src="images/boleto.png"/>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- Info Iugu -->
+                                                            <div id="iugu" class="moip">
+                                                                <div class="row">
+                                                                    <div class="col-md-9" style="padding: 10px;">
+                                                                        <p id="logo-iugu" class="xs" style="line-height: 24px; text-align: justify;">Os pagamentos são processados pelo <img src="images/iugu-logo.png" style="vertical-align: middle;"/></p>
+                                                                        <p class="xs" style="margin-top: 5px; line-height: 16px; text-align: justify;"> O Iugu utiliza diversos protocolos de 
+                                                                            segurança para manter suas informações seguras. O número do cartão de crédito, débito ou os dados 
+                                                                            de transferência bancária não ficam armazenados na loja, toda operação ocorre entre o computador do 
+                                                                            cliente e o site do Iugu.</p>
+                                                                    </div>
+                                                                    <div id="logo-card" class="col-md-3 col-lg-3 col-xs-12" style="margin: 0px;">
+                                                                        <p class="xs" style="line-height: 24px;">Bandeiras aceitas</p>
+                                                                        <div id="bandeiras" style="padding: 10px 40px 0 40px">
+                                                                            <img src="images/visa.png"/>
+                                                                            <img src="images/master.png"/>
+                                                                            <img src="images/elo.png"/>
+                                                                            <img src="images/diners.png"/>
+                                                                            <img src="images/boleto.png"/>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="cupom1" class="row">
+                                                <div id="show-discount1" class="pull-right" style="margin-right: 20px;">
+                                                    <a href="javascript:;" class="text-md">Aplicar cupom de desconto</a>
+                                                </div>
+                                                <div id="discount1" class="pull-right wizard-discount form-card" style="max-width: 200px; margin-right: 20px;">
+                                                    <div id="cupom1" class="row">
+                                                        <input id="cod1" type="text" placeholder="Cupom" style="margin: 5px 5px 0 2px; width: 110px;"/>
+                                                        <input id="apply1" type="button" class="pull-right btn btn-sm" style="margin: 5px 0 15px 0; padding: 5px 10px; height: 30px; background-color: rgb(229,96,37)" name="code1" value="Aplicar"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="wizard-footer">
+                                                <div id="buttons">
+                                                    <div class="pull-right">
+                                                        <input type='button' id="next" class='btn btn-next btn-fill btn-info btn-wd' name='next' value='Próximo'/>
+                                                    </div>
+                                                    <div class="pull-left">
+                                                        <input type='button' id="previous" class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Voltar'/>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </section> 
+
+                            <section id="voucher">
+                                <div id="voucher1" class="schedule" style="text-align: center; padding: 20px 20px 30px 20px;">
+                                    <div class="row" style="margin: 20px 120px; border: 1px solid rgb(227,227,227); border-radius: 8px; height: 100%;">
+                                        <div class="col-md-3" style="height: 100%; border-right: 1px solid rgb(227,227,227); height: 100%">
+                                            <div style="background-color: rgb(227,227,227); border-radius: 8px 0 0 0; height: 40px; margin-bottom: 20px;"></div>
+                                            <div style="margin-top: 40px;">
+                                                <img src="images/checked.png" style="height: 50px; margin: 20px;">
+                                                <p style="margin-bottom: 10px;"><b>Seu pagamento foi <br> aprovado!</b></p><br>
+                                                <p class="text-xs" style="padding: 20px; font-size: 13px;"> Você receberá um retorno sobre essa análise em até 48 horas. <br><br>
+                                                    Nesta etapa você também poderá receber uma mensagem do banco ou da operadora do cartão confirmando a cobrança. </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6" style="height: 100%">
+                                            <div style="background-color: rgb(227,227,227); height: 40px; margin-bottom: 20px;"></div>
+                                            <div class="ticket-content" style="height: 100%; border: 1px rgb(227,227,227);">
+                                                <div class="row" style="height: 40%">
+                                                    <div class="col-md-3" style="height: 100%">
+                                                        <img src="images/tickets.png" style="height: 80px; opacity: .3">
+                                                    </div>
+                                                    <div class="col-md-9 align-left">
+                                                        <div style="padding: 10px;">
+                                                            <p style="margin-bottom: 5px; padding: 0px;">Presença confirmada em:</p>      
+                                                            <h4 style="margin-left: 10px">SIC 2018 - Semana Internacional do Café</h4>
+                                                            <p class="xs" style="margin: 10px 20px 0 0; font-size: 15px;">Uma confirmação da inscrição foi enviada para xxxxxxxxxxxx@xxxxx.xxx</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="height: 60%; margin-top: 20px;">
+                                                    <div class="col-md-6">
+                                                        <p class="xs" style="padding: 10px; font-size: 15px; text-align: center; margin-bottom: 0;">Número do pedido:</p>
+                                                        <div class="col-md-2"></div>
+                                                        <div class="col-md-8">
+                                                            <p class="xs" style="padding: 20px 40px; background-color: rgba(144, 144, 144, 0.25); border-radius: 8px; word-wrap: break-word;"> 6EDFDA80481BF587531539AB3507253C </p>
+                                                        </div>
+                                                        <div class="col-md-2"></div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <p class="xs" style="margin: 20px 0; padding: 0 30px; font-size: 13px;">Você pode visualizar os detalhes da inscrição acessando a área do inscrito clicando no botão abaixo</p>
+                                                        <a href="#" class="btn btn-default" role="button">Acessar a Área do Inscrito</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3" style="border-left: 1px solid rgb(227,227,227); text-align: left;">
+                                            <div style="background-color: rgb(227,227,227); border-radius: 0 8px 0 0; height: 40px; margin-bottom: 20px;"></div>
+                                            <div  style="padding: 20px 20px 20px 40px;">
+                                                <div class="row">
+                                                    <div class="col-md-1" style="text-align: right;">
+                                                        <i class="far fa-calendar-alt" style="margin-right: 10px;"></i>
+                                                    </div>
+                                                    <div class="col-md-11">
+                                                        <p class="xs" style="margin-bottom: 0px; font-size: 14px;">07/11/2018 a 09/11/2018</p>
+                                                        <a style="font-size: 12px; margin-top: 2px; display: flex;"> Adicionar à agenda </a>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col-md-1" style="text-align: right; ">
+                                                        <i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>
+                                                    </div>
+                                                    <div class="col-md-11">
+                                                        <p class="xs" style="margin-bottom: 0px; font-size: 14px;">Expominas BH</p>
+                                                        <a style="font-size: 12px; margin-top: 2px; display: flex; margin-right: 10px;"> Av. Amazonas, 6200 - Gameleira, Belo Horizonte - MG, 30510-000 </a>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="col-md-4">
+                                                    <div id="map-container2" class="z-depth-1" style="height: 180px; width: 250px; border: 1px solid rgb(227,227,227); border-radius: 8px; margin-bottom: 20px;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <div id="voucher2" class="schedule" style="text-align: center; padding: 20px 20px 30px 20px;">
+                                    <div class="row" style="margin: 20px 120px; border: 1px solid rgb(227,227,227); border-radius: 8px; height: 100%;">
+                                        <div class="col-md-3" style="height: 100%; border-right: 1px solid rgb(227,227,227); height: 100%">
+                                            <div style="background-color: rgb(227,227,227); border-radius: 8px 0 0 0; height: 40px; margin-bottom: 20px;"></div>
+                                            <div style="margin-top: 40px;">
+                                                <img src="images/wall-clock.png" style="height: 50px; margin: 20px;">
+                                                <p style="margin-bottom: 10px;"><b>Seu pagamento está <br> em análise...</b></p>
+                                                <p class="text-xs" style="padding: 20px; font-size: 13px;"> Você receberá um retorno sobre essa análise em até 48 horas. <br><br>
+                                                    Nesta etapa você também poderá receber uma mensagem do banco ou da operadora do cartão confirmando a cobrança. </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6" style="height: 100%">
+                                            <div style="background-color: rgb(227,227,227); height: 40px; margin-bottom: 20px;"></div>
+                                            <div class="ticket-content" style="height: 100%; border: 1px rgb(227,227,227);">
+                                                <div class="row" style="height: 40%">
+                                                    <div class="col-md-3" style="height: 100%">
+                                                        <img src="images/tickets.png" style="height: 80px; opacity: .3">
+                                                    </div>
+                                                    <div class="col-md-9 align-left">
+                                                        <div style="padding: 10px;">
+                                                            <p style="margin-bottom: 5px; padding: 0px;">Presença confirmada em:</p>      
+                                                            <h4 style="margin-left: 10px">SIC 2018 - Semana Internacional do Café</h4>
+                                                            <p class="xs" style="margin: 10px 20px 0 0; font-size: 15px;">Uma confirmação da inscrição foi enviada para xxxxxxxxxxxx@xxxxx.xxx</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="height: 60%; margin-top: 20px;">
+                                                    <div class="col-md-6">
+                                                        <p class="xs" style="padding: 10px; font-size: 15px; text-align: center; margin-bottom: 0;">Número do pedido:</p>
+                                                        <div class="col-md-2"></div>
+                                                        <div class="col-md-8">
+                                                            <p class="xs" style="padding: 20px 40px; background-color: rgba(144, 144, 144, 0.25); border-radius: 8px; word-wrap: break-word;"> 6EDFDA80481BF587531539AB3507253C </p>
+                                                        </div>
+                                                        <div class="col-md-2"></div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <p class="xs" style="margin: 20px 0; padding: 0 30px; font-size: 13px;">Você pode visualizar os detalhes da inscrição acessando a área do inscrito clicando no botão abaixo</p>
+                                                        <a href="#" class="btn btn-default" role="button">Acessar a Área do Inscrito</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3" style="border-left: 1px solid rgb(227,227,227); text-align: left;">
+                                            <div style="background-color: rgb(227,227,227); border-radius: 0 8px 0 0; height: 40px; margin-bottom: 20px;"></div>
+                                            <div  style="padding: 20px 20px 20px 40px;">
+                                                <div class="row">
+                                                    <div class="col-md-1" style="text-align: right;">
+                                                        <i class="far fa-calendar-alt" style="margin-right: 10px;"></i>
+                                                    </div>
+                                                    <div class="col-md-11">
+                                                        <p class="xs" style="margin-bottom: 0px; font-size: 14px;">07/11/2018 a 09/11/2018</p>
+                                                        <a style="font-size: 12px; margin-top: 2px; display: flex;"> Adicionar à agenda </a>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col-md-1" style="text-align: right; ">
+                                                        <i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>
+                                                    </div>
+                                                    <div class="col-md-11">
+                                                        <p class="xs" style="margin-bottom: 0px; font-size: 14px;">Expominas BH</p>
+                                                        <a style="font-size: 12px; margin-top: 2px; display: flex; margin-right: 10px;"> Av. Amazonas, 6200 - Gameleira, Belo Horizonte - MG, 30510-000 </a>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="col-md-4">
+                                                    <div id="map-container2" class="z-depth-1" style="height: 180px; width: 250px; border: 1px solid rgb(227,227,227); border-radius: 8px; margin-bottom: 20px;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <div id="voucher3" class="schedule" style="text-align: center; padding: 0 20px 30px 20px;">
+                                    <div style="width: 40%; border: 1px solid rgba(144, 144, 144, 0.25); border-radius: 8px; margin: 0 auto; padding: 10px 0 20px 0;">
+                                        <div style="margin-top: 20px;">
+                                            <img src="images/cancel.png" style="height: 50px; margin: 20px;">
+                                            <p><b>Seu pagamento não foi autorizado.</b></p>
+                                            <p class="xs" style="margin: 10px 0; padding: 10px 30px 10px 30px; font-size: 16px; width: 550px; margin: 0 auto; text-align: center">
+                                                Um ou vários dados preenchidos durante a compra estão incorretos ou não puderam ser validados com o banco emissor do 
+                                                cartão. <br><br> 
+                                                Você podse revisar os dados informados e tentar novamente, ou tentar novamente usando outra forma de pagamento.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <div id="voucher4" class="schedule" style="text-align: center; padding: 0 20px 30px 20px;">
+                                    <div style="width: 80%; border: 1px solid rgba(144, 144, 144, 0.25); border-radius: 8px; margin: 0 auto; padding: 10px 0 20px 0;">
+                                        <div style="margin-top: 20px;">
+                                            <img src="images/sold.png" style="height: 120px; margin: 20px;">
+                                            <p style="margin-bottom: 20px;"><b>As inscrições para esse evento estão encerradas.</b></p>
+                                            <p class="xs" style="margin: 0 0 10px 0; padding: 10px 30px 10px 30px; font-size: 16px; width: 550px; margin: 0 auto; text-align: center">
+                                                Para mais informações, <br> entre em contato com a organização. 
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </section>
+
+                    <!-- Four -->
+                        <section id="producer">
+                            <div class="foot">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-4 col-lg-4 col-xs-12 row-left">
+                                            <p class="title">FEDERAÇÃO DAS ASSOCIAÇÕES COMERCIAIS E EMPRESARIAIS DE MINAS GERAIS</p>
+                                            <p class="title subtext">+55 (11) 3586-2233</p>
+                                        </div>
+                                        <div class="col-md-4 col-lg-4 col-xs-12">
+                                            <img src="images/logo_sic_reduzido.png" alt="Logo da Semana Internacional do Café" class="foot img img-xs">
+                                        </div>
+                                        <div class="col-md-4 col-lg-4 col-xs-12 row-right">
+                                            <p class="title subtext">Dúvidas sobre o evento?</p>
+                                            <a href="#" class="btn default" data-toggle="modal" data-target="#modalFAQ"><i class="btn-icon far fa-envelope" ></i>Fale com o produtor</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <!-- Modal FAQ -->
+                        <div class="modal fade login" id="modalFAQ">
+                            <div class="modal-dialog modal-md login animated">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h5 class="modal-title" style="margin-bottom: 10px; font-size: 18px;">Ficou com alguma dúvida sobre esse evento?</h5>
+                                    </div>
+                                    <div class="modal-body">  
+                                        <p class="modal-title-body align-center" style="margin-bottom: 30px;">Entre em contato com o organizador:</p>
+
+                                        <div class="box">
+                                            <div class="content">
+                                                <div class="form form-info">
+                                                    <form method="post" action="/login" accept-charset="UTF-8" style="width: 85%; margin: 0 auto;">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group label-floating">
+                                                                    <label class="control-label">Nome</label>
+                                                                    <input id="user" name="user" type="text" class="form-control" style="color: rgb(30,31,35)">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group label-floating">
+                                                                    <label class="control-label">E-mail</label>
+                                                                    <input id="email" name="email" type="text" class="form-control" style="color: rgb(30,31,35)">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group label-floating">
+                                                                    <label class="control-label">Mensagem</label>
+                                                                    <textarea class="form-control" placeholder="" rows="4" style="color: rgb(30,31,35); margin-bottom: 0px; "></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-primary" style="background-color: rgb(229,96,37); border-color: rgb(229,96,37)">Enviar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+            <!-- Footer -->
+                <footer id="footer">
+                    <div class="row content align-center">
+                        <div class="col-md-4 col-lg-4 col-xs-12"></div>
+                        <div class="col-md-4 col-lg-4 col-xs-12 align-center">
+                            <a href="#" class="btn default" role="button">Crie seu evento</a>
+                        </div>
+                        <div class="col-md-4 col-lg-4 col-xs-12 align-right">
+                            <a href="#"><img src="images/4993_1794_logomarca.png" class="img-logo"></a>
+                        </div>
+                    </div>
+                    
+                </footer>
+            </div>
+    
+            
+
+
+            <!-- Scripts -->
+                <script src="assets/js/jquery.min.js"></script>
+                <script src="assets/js/jquery.poptrox.min.js"></script>
+                <script src="assets/js/skel.min.js"></script>
+                <script src="assets/js/util.js"></script>
+                <script src="assets/js/main.js"></script>
+                <script src="https://maps.google.com/maps/api/js?key=AIzaSyDEpPHodaLsTQVE95mYyalve793R_gAl-Q"></script>
+                <script src = "https://code.jquery.com/jquery-2.1.1.min.js" type = "text/javascript"></script> 
+
+                <!--   Core JS Files   -->
+                <script src="assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+                <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+                <script src="assets/js/jquery.bootstrap.js" type="text/javascript"></script>
+
+                <!--  Plugin for the Wizard -->
+                <script src="assets/js/material-bootstrap-wizard.js"></script>
+
+
+                <!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
+                <script src="assets/js/jquery.validate.min.js"></script>
+
+                <!-- Inscreva-se -->
+                <script type='text/javascript'>
+                    $(function() {
+                        var btn = document.getElementById("toRegister");
+                        btn.addEventListener("click", ocultar);
+                        
+                        function ocultar(){
+                            this.style.display = "none";
+                            $("#register").hide();
+                        };
+                    });
+                </script>
+    
+                <!-- Modal Init -->
+                <script>
+                    $(document).ready(function() {
+                        $('#modalInit').modal('show');
+                    })
+                </script>
+
+                <!--  Google Maps -->
+                <script>
+                    function regular_map() {
+                        var var_location = new google.maps.LatLng(-19.930266, -43.988529);
+                        var var_mapoptions = {
+                            center: var_location,
+                            zoom: 14
+                        };
+                        var var_map = new google.maps.Map(document.getElementById("map-container"),
+                            var_mapoptions);
+                        var var_map = new google.maps.Map(document.getElementById("map-container2"),
+                            var_mapoptions);       
+                        var var_map = new google.maps.Map(document.getElementById("map-container3"),
+                            var_mapoptions);        
+                        var var_marker = new google.maps.Marker({
+                            position: var_location,
+                            map: var_map,
+                            title: "Av. Amazonas, 6200 - Gameleira, Belo Horizonte - MG, 30510-000"
+                        });
+                    }
+                    // Initialize maps
+                    google.maps.event.addDomListener(window, 'load', regular_map);
+                </script>
+
+                <!-- Pagar -->
+                <script>
+                    function showVoucher() {
+                        $("#wizard").hide();
+                        $("#voucher").show();
+                    }
+                </script>
+
+                <!--  Credit Card Actions -->
+                <script>
+                    $( document ).ready(function() {
+                        $("#back, #front").click(function () {
+                            if (this.id == "back") {
+                                $(".flip-container").addClass("flip");
+                            }
+                            else if (this.id == "front") {
+                                $(".flip-container").removeClass("flip");
+                            }
+                        });
+                        $("#name, #number, #month, #cvv, #year").bind("change paste keyup", function() {
+                            if (this.id == "name") {
+                                $(".card__name").text($(this).val());
+                            }
+                            else if (this.id == "number") {
+                                var VISA_PREFIXES = ["41", "42", "43", "44", "45", "46", "47", "48"]; // Prefixes for VISA cards
+                                var MC_PREFIXES = ["51", "52", "53", "54", "55"]; // Prefixes for Master Card cards
+                                var HIPER_PREFIXES = ["38", "60"]; // Prefixes for Hipercard cards
+                                var DINERS_PREFIXES = ["30", "36", "38"]; // Prefixes for Diners cards
+                                var ELO_PREFIXES = ["636368", "636369", "438935", "504175", "451416", "636297", "5067", "4576", "4011", "506699"]; // Prefixes for Elo cards
+                                var AMEX_PREFIXES = ["34", "37"]; // Prefixes for Amex cards
+
+
+                                var field_value = $(this).val();
+
+                                if (field_value.charAt(0) === "4" && field_value.length >= 2) {
+                                    var prefix = field_value.slice(0, 2);
+
+                                    if (VISA_PREFIXES.includes(prefix)) {
+                                        $("#card__image").attr("src", "https://k60.kn3.net/F/7/8/1/A/3/D23.png");
+                                    }
+                                } else if (field_value.charAt(0) === "5" && field_value.length >= 2) {
+                                    var prefix = field_value.slice(0, 2);
+
+                                    if (MC_PREFIXES.includes(prefix)) {
+                                        $("#card__image").attr("src", "https://k60.kn3.net/8/C/F/A/8/9/B0E.png");
+                                    }
+                                } else {
+                                    $("#card__image").attr("src", "");
+                                }
+
+                                $(".card__number").text(field_value);
+                            }
+                            else if (this.id == "month") {
+                                $(".card__month").text($(this).val());
+                            }
+                            else if (this.id == "cvv") {
+                                $(".card__cvv").text($(this).val());
+                            }
+                            else if (this.id == "year") {
+                                $(".card__year").text($(this).val());
+                            }
+                        });
+                    });
+                </script>
+                
+                <!--  Cupom -->
+                <script>
+                    $(document).ready(
+                        function() {
+                            $("#show-discount1").click(function() {
+                                $("#discount1").show();
+                                $("#show-discount1").hide();
+                            });
+                            
+                            $("#apply1").click(function() {
+                                $("#discount1").hide();
+                            });
+                    });
+
+                    $(document).ready(
+                        function() {
+                            $("#show-discount2").click(function() {
+                                $("#discount2").show();
+                                $("#show-discount2").hide();
+                            });
+                            
+                            $("#apply2").click(function() {
+                                $("#confirm2").show();  
+                                $("#show-discount2").hide();                             
+                            });
+                    });
+                </script>
+
+                <!--  Event Days -->
+                <script>
+                    var header = document.getElementById("buttonGroup");
+                    var btns = header.getElementsByClassName("btn btn-filter");
+                    for (var i = 0; i < btns.length; i++) {
+                        btns[i].addEventListener("click", function() {
+                            var current = document.getElementsByClassName(".active");
+                            current[0].className = current[0].className.replace(" active", "");
+                            this.className += " active";
+                        });
+                    }
+
+                    $(document).ready(function () {
+                        $('.star').on('click', function () {
+                            $(this).toggleClass('star-checked');
+                        });
+
+                        $('.ckbox label').on('click', function () {
+                            $(this).parents('tr').toggleClass('selected');
+                        });
+
+                        $('.btn-filter').on('click', function () {
+                            var $target = $(this).data('target');
+                            if ($target != 'all') {
+                                $('#table #activity').css('display', 'none');
+                                $('#table #activity[data-status="' + $target + '"]').fadeIn('slow');
+                            } else {
+                                $('#table #activity').css('display', 'none').fadeIn('slow');
+                            }
+                        });
+                    });
+                </script>
+
+                <!-- Show more -->
+                <script>
+                    $(document).ready(function () {
+                        $('.tgl').before('<span><font color=#00bcd4>ver mais »</font></span>');
+                        $('.tgl').css('display', 'none')
+                        
+                        $('span', '#box-toggle').click(function () {
+                            $(this).next().slideToggle('slow')
+                            .siblings('.tgl:visible').slideToggle('fast');
+                            
+                            $(this).toggleText('ver mais »', '« ver menos')
+                            .siblings('span').next('.tgl:visible').prev()
+                            .toggleText('ver mais »', '« ver menos')
+                        });
+                    })
+                </script>
+
+                <script>
+                   $(function() {
+                        var $tabButtonItem = $('#tab-button li'),
+                            $tabSelect = $('#tab-select'),
+                            $tabContents = $('.tab-contents'),
+                            activeClass = 'is-active';
+
+                            $tabButtonItem.first().addClass(activeClass);
+                            $tabContents.not(':first').hide();
+
+                            $tabButtonItem.find('a').on('click', function(e) {
+                            var target = $(this).attr('href');
+
+                            $tabButtonItem.removeClass(activeClass);
+                            $(this).parent().addClass(activeClass);
+                            $tabSelect.val(target);
+                            $tabContents.hide();
+                            $(target).show();
+                            e.preventDefault();
+                        });
+
+                        $tabSelect.on('change', function() {
+                            var target = $(this).val(),
+                                targetSelectNum = $(this).prop('selectedIndex');
+
+                            $tabButtonItem.removeClass(activeClass);
+                            $tabButtonItem.eq(targetSelectNum).addClass(activeClass);
+                            $tabContents.hide();
+                            $(target).show();
+                            });
+                        });
+                
+                </script>
+
+                <script>
+                    function showRegisterForm(){
+                        $('.loginBox').fadeOut('fast',function(){
+                            $('.registerBox').fadeIn('fast');
+                            $('.login-footer').fadeOut('fast',function(){
+                                $('.register-footer').fadeIn('fast');
+                            });
+                            $('.modal-title').html('Cadastrar');
+                            $('.modal-title-body').html('Criar conta');
+                        }); 
+                        $('.error').removeClass('alert alert-danger').html('');
+                        
+                    }
+                    function showLoginForm(){
+                        $('#loginModal .registerBox').fadeOut('fast',function(){
+                            $('.loginBox').fadeIn('fast');
+                            $('.register-footer').fadeOut('fast',function(){
+                                $('.login-footer').fadeIn('fast');    
+                            });
+                            
+                            $('.modal-title').html('Login');
+                        });       
+                        $('.error').removeClass('alert alert-danger').html(''); 
+                    }
+
+                    function openLoginModal(){
+                        showLoginForm();
+                        setTimeout(function(){
+                            $('#loginModal').modal('show');    
+                        }, 230);
+                        
+                    }
+                    function openRegisterModal(){
+                        showRegisterForm();
+                        setTimeout(function(){
+                            $('#loginModal').modal('show');    
+                        }, 230);
+                        
+                    }
+
+                    function loginAjax(){
+                        /*   Remove this comments when moving to server
+                        $.post( "/login", function( data ) {
+                            if(data == 1){
+                                window.location.replace("/home");            
+                            } else {
+                                shakeModal(); 
+                            }
+                        });
+                        */
+
+                    /*   Simulate error message from the server   */
+                        shakeModal();
+                    }
+
+                    function shakeModal(){
+                        $('#loginModal .modal-dialog').addClass('shake');
+                                $('.error').addClass('alert alert-danger').html("Combinação de e-mail/senha inválidos!");
+                                $('input[type="password"]').val('');
+                                setTimeout( function(){ 
+                                    $('#loginModal .modal-dialog').removeClass('shake'); 
+                        }, 1000 ); 
+                    }
+                </script>
+
+                <!-- Action Button Inscreva-se -->
+                <script>
+                    $(window).scroll(function() {
+                        if ($('#schedule').offset().top > $(window).scrollTop()){
+                            $('.register').fadeOut();
+                        }
+                        else {
+                            if ($('#producer').offset().top > $(window).scrollTop()){
+                                $('.register').fadeOut();
+                            }
+                            else {
+                                $('.register').fadeIn();
+                            }
+                        }
+                    });
+                </script>
+
+        </body>
+    </html>
